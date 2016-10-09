@@ -1,0 +1,35 @@
+var BMT = {} //BoundaryMapTemplate
+
+//The following two global variables define the field to use to join your csv data to the 
+//shapes in the shapefile.
+BMT.shapefile_join_field = "code"
+BMT.data_join_field = "code"
+
+BMT.filter_field = "date"
+
+//BMT.shapefile_path = "topojson/brexit_countries.json"
+BMT.shapefile_path = "topojson/hmcts_regions.json"
+
+//BMT.csv_path = "data/world_csv.csv"
+BMT.csv_path = "data/regions_csv.csv"
+
+//Colour options for shading
+BMT.colour_options = {
+    "Powerpoint" :[  "#d2deef","#5b9bd5",     "#2e75b6","#1f4e79","#b62e2e"],
+    "Powerpoint bright red" :["#d2deef","#5b9bd5",     "#2e75b6","#1f4e79", "#FF0000"],
+    "Red (high) to green (low)": ["#6AE817","#FFA200", "#B30409"],
+    "Blues": ["#B5EED9", "#37BAE5",  "#132978", "#0D162C"],
+    "Condensed" : ["#6ae817","#c3dd24","#f0ab26","#c22d10","#a10408","#6b0205","#360103","#1b0101","#0d0001","#000000"],
+};
+
+BMT.categorical_colours = ["#777", "#dc3912", "#ff9900", "#0E8917", "#990099", "#0099c6", "#dd4477", "#A6FF3C", "#FF3F42", "#1C3C5D", "#D860DA"];
+
+//Manual overrides on the description of the columns in the csv file.
+BMT.column_descriptions_data = {
+    "value": {
+        "long_name": "My value",
+        "format": d3.format(",.1%"),
+        "domain": [0, 0.33, 0.66, 1, 2]
+
+    }
+}

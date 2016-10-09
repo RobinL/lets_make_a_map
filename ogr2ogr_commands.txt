@@ -1,0 +1,28 @@
+ogr2ogr -t_srs WGS84  -f GeoJSON   fixed.geojson   district_borough_unitary_region.shp
+
+topojson -o fixed.topojson fixed.geojson --simplify-proportion 0.04 -p
+
+
+ogr2ogr -t_srs WGS84  -f GeoJSON ne_10m_admin_0_map_subunits.geojson ne_10m_admin_0_map_subunits.shp
+
+topojson -o ne_10m_admin_0_map_subunits.topojson  ne_10m_admin_0_map_subunits.geojson  --simplify-proportion 0.04 -p
+
+topojson -o ne_10m_admin_0_map_subunits2.topojson ne_10m_admin_0_map_subunits.geojson  --id-property SU_A3 --properties name=NAME  --simplify-proportion 0.04 -p
+
+
+NOTE - query will parse a .json file differently to a .topojson.  Be careful!!
+—
+
+ogr2ogr \
+  -f GeoJSON \
+  subunits.json \
+  ne_10m_admin_0_map_subunits.shp
+
+
+topojson \
+  -o /Users/robinlinacre/Documents/visualisation_projects/brexit_maps/topojson/uk.json \
+  --id-property SU_A3 \
+  --properties name=NAME,admin=ADMIN \
+  -- \
+  subunits.json 
+

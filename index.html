@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Shapefile visualisation</title>
+    <meta name="description" content="Shapefile visualisation">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/leaflet.css">
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+  </head>
+
+  <body>
+    <div id="map"></div>
+    <div class="padded_options">
+      <div class="flex_parent">
+
+        <div class="flex_item">
+          <div id='metric' class='selections'>
+            <label for="shapeColoursVariable">Choose metric to use for area shading:
+            </label>
+            <select name="shapeColoursVariable" id="shapeColoursVariable">
+            </select>
+          </div>
+        </div>
+        
+        <div class="flex_item">
+          <div id='metric' class='selections'>
+            <label for="colourOptions">Select colour scheme:
+            </label>
+            <select name="colourOptions" id="colourOptions">
+            </select>
+          </div>
+        </div>
+
+        <div class="flex_item">
+          <div id='metric' class='selections'>
+            <label for="filterData">Toggle basemap
+            </label>
+            <input type="checkbox" id="toggle_basemap_button" checked>
+            </input>
+            <input type="text" id="background_colour_input" value="#FFFFFF">
+          
+          </div>
+        </div>
+
+         <div class="flex_item">
+          <div id='metric' class='selections'>
+            <label for="filterData">Choose csv file:
+            </label>
+             <input type="file" name="File Upload" id="fileupload" accept=".csv">
+          
+          </div>
+        </div>
+
+        <div class="flex_item">
+          <div id='metric' class='selections'>
+            <label for="filterData">Value, fill opacity and border opacity
+            </label>
+             <input type="text" id="new_value_input" value="1">
+             <input type="text" id="new_fill_opacity_input" value="1">
+             <input type="text" id="new_border_opacity_input" value="1">
+          
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div id='hover_panel'>
+      <h3>Hover over areas to display statistics</h3>
+    
+    </div>
+
+   
+
+    <script src="js/leaflet.txt"></script>
+    <script src="js/d3.txt"></script>
+    <script src="js/topojson.v1.min.txt"></script>
+    <script src="js/underscore.txt"></script>
+    <script src="js/jquery.txt"></script>
+    <script src="js/handlebars-v4.0.5.txt"></script>
+
+    <!-- <script src="topojson/topo_lad.txt"></script> -->
+    <!-- <script src="data/csv_data.txt"></script> -->
+
+    <script src="js/utils.txt"></script>
+    <script src="js/settings.txt"></script>
+    <script src="js/shapefilemap.txt"></script>
+    <script src="js/little_line_chart.txt"></script>
+    <script src="js/dataholder.txt"></script>
+    <script src="js/main.txt"></script>
+    
+
+    <script id="hp_info" type="text/x-handlebars-template">
+      <div class="entry">
+       {{#each object}}
+       <p>
+        <strong>{{@key}}:</strong> {{this}}
+      </p>
+       {{/each}}
+       <a href="regions.html">Go to UK regions map</a>
+      </div>
+    </script>
+  </body>
+</html

@@ -1,0 +1,325 @@
+function ShapefileMap(geo_collection) {
+
+    var me = this;
+
+    var geo_collection = geo_collection;
+
+    var map = new L.Map("map", {
+                        center: [52.53, -0.09],
+                        zoom: 7,
+                        errorTileUrl: 'error.png'
+                    })
+                    .addLayer(new L.TileLayer("https://tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png"));
+
+    BMT.map = map;
+
+    var svg = d3.select(map.getPanes().overlayPane).append("svg");
+
+    var g = svg.append("g").attr("class", "leaflet-zoom-hide");
+
+    map.on("viewreset", reposition);
+    map.on("moveend", reposition);
+
+    var transform = d3.geo.transform({
+            point: projectPoint
+        })
+    
+    var path = d3.geo.path().projection(transform);
+
+    var feature = g.selectAll("path")
+        .data(geo_collection.features)
+        .enter()
+        .append("path")
+        .attr("fill", function(d) {return "#000"})
+        .attr("d", path);
+
+    
+    
+
+    // Reposition the SVG to cover the features.
+    function reposition() {
+        var bounds = path.bounds(geo_collection),
+            topLeft = bounds[0],
+            bottomRight = bounds[1];
+
+        svg.attr("width", bottomRight[0] - topLeft[0])
+            .attr("height", bottomRight[1] - topLeft[1])
+            .style("left", topLeft[0] + "px")
+            .style("top", topLeft[1] + "px");
+
+        g.attr("transform", "translate(" + -topLeft[0] + "," + -topLeft[1] + ")");
+
+        feature.attr("d", path)
+            .on("mouseover", on_mouseover)
+            .on("mouseout", on_mouseout)
+            .on("click", function(d) {
+                
+
+                var new_value_input = $("#new_value_input").val()
+                var new_fill_opacity_input = $("#new_fill_opacity_input").val()
+                var new_border_opacity_input = $("#new_border_opacity_input").val()
+
+                var d = d
+                //Update data
+
+                var data_variable = $("#shapeColoursVariable").val()
+
+                _.each(BMT.dataholder.all_csv_data, function(d2) {
+                    if (d.properties.code == d2.code) {
+                        d2[data_variable] = new_value_input
+                        if (new_fill_opacity_input != "") {
+                            d2.fill_visible = new_fill_opacity_input
+                        }
+                        if (new_border_opacity_input != "") {
+                            d2.border_visible = new_border_opacity_input
+                        }
+                    }   
+                })
+
+                BMT.dataholder.process_column_descriptions()
+                BMT.dataholder.parse_columns()
+                BMT.dataholder.set_domains()  
+                BMT.shapefilemap.redraw()
+            })
+
+        d3.select('#map_key').remove();
+        if  (BMT.column_descriptions_data[$("#shapeColoursVariable").val()]["is_categorical"]) {
+            draw_map_key_categorical()
+            } else {
+            draw_map_key_continuous()
+        };
+    }
+
+    // Use Leaflet to implement a D3 geometric transformation.
+    function projectPoint(x, y) {
+        var point = map.latLngToLayerPoint(new L.LatLng(y, x));
+        this.stream.point(point.x, point.y);
+    }
+
+    function get_data(d) {
+            return  BMT.dataholder.points_lookup[d.properties[BMT.shapefile_join_field]]
+        }
+
+
+    this.redraw = function() {
+        //Filter points based on options
+        BMT.dataholder.filter_points()
+        BMT.dataholder.update_colour_scales()
+
+    
+
+        var data_variable = $("#shapeColoursVariable").val()
+
+        var feature = g.selectAll("path")
+            .data(geo_collection.features)
+          
+            .attr("fill", function(d) {
+                var this_data = get_data(d);
+                if (!(this_data)) {
+                    return "#000"
+                }
+                var this_value = this_data[data_variable];
+                return BMT.column_descriptions_data[data_variable].colour_scale(this_value)
+
+
+            })
+            .style("fill-opacity", function(d) {
+                var this_data = get_data(d);
+                return this_data["fill_visible"]*0.9
+            })
+            .style("stroke-opacity", function(d) {
+                var this_data = get_data(d);
+                return this_data["border_visible"]*0.9
+            })
+           
+
+
+
+        reposition()
+    }
+
+    this.redraw()
+
+    function on_mouseover(d){
+            var d = d
+
+            var template_dict = {}
+
+            _.each(d.properties, function(dd, k) {
+                template_dict[k] = dd
+            })
+
+            // Now join on data from csv file
+            var this_data = get_data(d)
+            _.each(this_data, function(dd, k) {
+                template_dict[k] = dd
+            })
+
+
+            //For each in template dict, format if format exists
+            _.each(template_dict, function(k,v) {
+                if (BMT.column_descriptions_data[v]){
+                    template_dict[v] =     BMT.column_descriptions_data[v].format(template_dict[v])
+                }
+            })
+
+            // Update hover panel
+
+            var source = $("#hp_info").html();
+            var template = Handlebars.compile(source);
+            var html = template({object:template_dict});
+            d3.select('#hover_panel')
+                .html(html)
+
+            
+
+    }
+
+    function on_mouseout(d) {
+        // d3.select('#hover_panel')
+        //         .html("<h3>Hover over areas to display statistics</h3>")
+
+        // d3.select('#hover_panel_charts')
+        //         .html("<h3>Hover over areas to display statistics</h3>")
+
+    }
+
+
+}
+
+var draw_map_key_categorical = function() {
+
+    var scale = BMT.column_descriptions_data[$("#shapeColoursVariable").val()]["colour_scale"]
+
+    var key_position_top = 200;
+    var key_position_left = 70;
+    var key_height = 300;
+
+    var bounds = BMT.map.getBounds(),
+        topLeft = BMT.map.latLngToLayerPoint(bounds.getNorthWest()),
+        bottomRight = BMT.map.latLngToLayerPoint(bounds.getSouthEast()),
+        existing = d3.set(),
+        drawLimit = bounds.pad(0.4);
+
+    // Need a scale that turns domain into height then just draw rectanges and text
+    var axis_scale = d3.scale.ordinal().domain(scale.domain()).rangeBands([scale.domain().length *20, 0])
+
+    var svg = d3.select(BMT.map.getPanes().overlayPane).append("svg")
+        .attr('id', 'map_key')
+        .attr("class", "leaflet-zoom-hide")
+        .style("width", BMT.map.getSize().x + 'px')
+        .style("height", BMT.map.getSize().y + 'px')
+        .style("margin-left", topLeft.x + "px")
+        .style("margin-top", topLeft.y + "px")
+        .style("pointer-events", "none");
+
+    var key_elements = svg.append("g")
+        .attr("transform", "translate(" + key_position_left + "," + key_position_top + ")")
+        .selectAll(".keyrects")
+        .data(scale.domain())
+        .enter()
+
+    key_elements
+        .append("rect")
+        .attr("x", 0)
+        .attr("y", function(d) {
+            return axis_scale(d)
+        })
+        .attr("width", 10)
+        .attr("height", 10)
+        .attr("fill", function(d) {
+            return scale(d)
+        })
+
+    key_elements.append("text")
+        .text(function(d) {
+            return d
+        })
+
+    .attr("x", 20)
+        .attr("y", function(d) {
+            return axis_scale(d) + 10
+        })
+}
+
+
+var draw_map_key_continuous = function() {
+
+    var key_position_top = 200
+    var key_position_left = 70
+    var key_height = 300
+
+    var bounds = BMT.map.getBounds(),
+        topLeft = BMT.map.latLngToLayerPoint(bounds.getNorthWest()),
+        bottomRight = BMT.map.latLngToLayerPoint(bounds.getSouthEast()),
+        existing = d3.set(),
+        drawLimit = bounds.pad(0.4);
+
+    var num_steps = 50;
+
+    var map_colour_scale = BMT.column_descriptions_data[$("#shapeColoursVariable").val()]["colour_scale"];
+
+    var num_cats = map_colour_scale.domain().length
+
+    var axis_scale = d3.scale.linear().domain(map_colour_scale.domain()).range(d3.range(key_height, -0.001, -key_height / (num_cats - 1)))
+
+    var inverted_scale = axis_scale.invert;
+
+    var svg = d3.select(BMT.map.getPanes().overlayPane).append("svg")
+        .attr('id', 'map_key')
+        .attr("class", "leaflet-zoom-hide")
+        .style("width", BMT.map.getSize().x + 'px')
+        .style("height", BMT.map.getSize().y + 'px')
+        .style("margin-left", topLeft.x + "px")
+        .style("margin-top", topLeft.y + "px")
+        .style("pointer-events", "none");
+
+    steps = _.map(d3.range(num_steps), function(i) {
+        return i * key_height / num_steps
+    })
+
+    svg.append("g")
+        .attr("transform", "translate(" + key_position_left + "," + key_position_top + ")")
+        .selectAll(".keyrects")
+        .data(steps)
+        .enter()
+        .append("rect")
+        .attr("x", 0)
+        .attr("y", function(d) {
+            return d 
+        })
+        .attr("width", 10)
+        .attr("height", (key_height / num_steps))
+        .attr("fill", function(d) {
+            return map_colour_scale(inverted_scale(d+(key_height / num_steps)/2))
+        })
+
+    var yAxis = d3.svg.axis()
+        .scale(axis_scale)
+        .orient("left")
+        .ticks(10, ",0.2s")
+        .tickSize(-10, 0)
+        .tickFormat(BMT.column_descriptions_data[$("#shapeColoursVariable").val()]["format"])
+
+
+    svg.append("g")
+        .attr("transform", "translate(" + key_position_left + "," + key_position_top + ")")
+        .attr("class", "y axis")
+        .call(yAxis)
+
+    svg.append("g")
+        .attr("transform", "translate(90," + key_position_top + ") rotate(90)")
+        .append("text")
+        .text(function(d) {
+            return BMT.column_descriptions_data[$("#shapeColoursVariable").val()]["long_name"]
+        })
+        .style("font-weight", "bold")
+        .style("font-size", "12px")
+
+    svg.append("g").attr("transform", "translate(" + (key_position_left - 30) + "," + (key_position_top - 10) + ")")
+        .append("text")
+        .text("Key:")
+        .style("font-weight", "bold")
+        .style("font-size", "12px")
+}
+

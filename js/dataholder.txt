@@ -1,0 +1,271 @@
+function DataHolder(csv_data) {
+
+    var me = this
+    //Copy data
+    this.all_csv_data = csv_data.slice();
+    
+    this.current_points = []
+    this.points_lookup = {}
+
+    this.filter_points = function() {
+        // Field to filter on
+        //var filter_value = $("#filterData").val();
+        
+        //var filter_format = BMT.column_descriptions_data[BMT.filter_field].format
+     
+        me.current_points = []
+        me.points_lookup = {}
+
+        //var filter_format = BMT.column_descriptions_data[BMT.filter_field].format
+        
+        // this.current_points = _.filter(this.all_csv_data, function(d) {
+        //     return (filter_format(d[BMT.filter_field]) == filter_value)
+        // })
+
+        this.current_points = this.all_csv_data
+
+        //Get rid of data which doesn't have a join field (i.e. don't correspond to a known geometry)
+        var shape_codes = {};
+        _.each(BMT.geo_collection.features, function(d) {
+            shape_codes[d.properties[BMT.shapefile_join_field]] = null
+        })
+
+
+
+        this.current_points = _.filter(this.current_points , function(d) {
+            return d[BMT.data_join_field] in shape_codes
+        })
+
+        me = this;
+        _.each(this.current_points, function(d) {
+            me.points_lookup[d[BMT.data_join_field]] = d
+        })
+
+    }
+
+    
+    this.process_column_descriptions = function() {
+
+        // Add any keys which are in the data but aren't in column_descriptions_data
+        _.each(this.all_csv_data[0], function(d, k) {
+            if (!(_.has(BMT.column_descriptions_data, k))) {
+                BMT.column_descriptions_data[k] = {
+                    "manually_included": false
+                }
+            } else {
+                BMT.column_descriptions_data[k]["manually_included"] = true
+            }
+
+        })
+
+
+        // If they don't have a long name, overwrite with the key
+        _.each(BMT.column_descriptions_data, function(d, k) {
+            if (!(_.has(d, "long_name"))) {
+                d["long_name"] = k
+            }
+        });
+
+        // Set default colour option to first in the list unless manually specified
+        _.each(BMT.column_descriptions_data, function(d, k) {
+            if (!(_.has(d, "colour_option"))) {
+                d["colour_option"] = _.keys(BMT.colour_options)[0]
+                d["colour_option_manually_set"] = false
+            } else {
+                d["colour_option_manually_set"] = true
+            }
+        })
+
+        // Hold the key in the dict for easy access later
+        _.each(BMT.column_descriptions_data, function(d, k) {
+            d["key"] = k
+        })
+
+
+        // Detect whether variables are categorical or continuous
+        // Iterate through the columns which will be part of this vis
+        var all_csv_data = this.all_csv_data
+        _.each(BMT.column_descriptions_data, function(d, k) {
+            if (!(_.has(d, "is_categorical"))) {
+                // Look through data - if we can parsefloat every value then we call it numeric otherwise categorical
+                var categorical = _.some(all_csv_data, function(d2) {
+                    this_value = d2[k];
+
+                    if (this_value !== "") {
+                        var pf = parseFloat(this_value)
+
+                        if (isNaN(pf)) {
+                            return true
+                        }
+                    }
+                    return false
+
+                })
+                BMT.column_descriptions_data[k]["is_categorical"] = categorical
+            }
+        });
+
+        // Set format if not exists
+        _.each(BMT.column_descriptions_data, function(d, k) {
+            if (!(_.has(d, "format"))) {
+                if (d["is_categorical"]) {
+                    d["format"] = function(d) {
+                        return d
+                    }
+
+                } else {
+                    d["format"] = d3.format(",.1f")
+                }
+            }
+        })
+
+        // Set parser if not exists
+        _.each(BMT.column_descriptions_data, function(d, k) {
+            if (!(_.has(d, "val_parser"))) {
+                if (d["is_categorical"]) {
+                    d["val_parser"] = function(d) {
+                        return d
+                    }
+
+                } else {
+                    d["val_parser"] = parseFloat
+                }
+            }
+        })
+
+
+        // Detect whether domain has been set manually. 
+        _.each(BMT.column_descriptions_data, function(d, k) {
+            if (!(_.has(d, "domain"))) {
+                d["domain_manually_set"] = false
+            } else {
+                d["domain_manually_set"] = true
+            }
+        });
+
+    };
+
+
+    this.parse_columns = function() {
+
+        _.each(this.all_csv_data, function(d) {
+            _.each(BMT.column_descriptions_data, function(d2, k2) {
+                
+                d[k2] = d2["val_parser"](d[k2])
+                
+            })
+        })
+
+        
+    }
+
+    this.set_domains = function() {
+        var all_csv_data = this.all_csv_data
+
+        _.each(BMT.column_descriptions_data, function(d1, k1) {
+
+            // For each columns, set the domain
+
+            // If categorical, get uniques
+
+            if (d1["is_categorical"]) {
+
+                var uniques = _.uniq(all_csv_data, function(item, key) {
+                    a = item[k1]
+                    return item[k1]
+                })
+
+                uniques = _.map(uniques, function(d) {
+                    return d[k1]
+                })
+
+                if (!(d1["domain_manually_set"])) {
+                    d1["domain"] = uniques
+                }
+                d1["colour_scale"] = d3.scale.ordinal().domain(d1["domain"]).range(BMT.categorical_colours)
+            }
+
+            // If numeric, get min max
+
+            if (!(d1["is_categorical"])) {
+
+                var all_values = _.map(all_csv_data, function(d) {
+                    return d[k1]
+                });
+
+                var all_values = _.filter(all_values, function(d) {
+                    return !(isNaN(d))
+                })
+
+                var minMetric = Math.min.apply(null, all_values);
+                var maxMetric = Math.max.apply(null, all_values);
+
+                // Need to split min to max depending on how many items in colour scale
+
+                // get colour scale 
+
+                var c_options = BMT.colour_options[d1["colour_option"]]
+
+                var num_colours = c_options.length
+                var diff = maxMetric - minMetric
+
+                domain = d3.range(minMetric, maxMetric + diff / 100, diff / (c_options.length - 1))
+
+                if (!(d1["domain_manually_set"])) {
+                    d1["domain"] = domain
+                }
+
+                d1["colour_scale"] = d3.scale.linear()
+                    .domain(d1["domain"])
+                    .range(c_options);
+
+                d1["minmax"] = [minMetric, maxMetric]
+
+            }
+
+
+        })
+    }
+
+    this.update_colour_scales = function() {
+
+        var colourScaleOption = $("#colourOptions").val()
+        var colour_scale = BMT.colour_options[colourScaleOption]
+
+        // Iterate through the column_descriptions_data updating the colour scale
+
+        _.each(BMT.column_descriptions_data, function(d, k) {
+
+            if (d["colour_option_manually_set"] == false) {
+
+                if (!(d["is_categorical"])) {
+
+                    var min_ = d["minmax"][0];
+                    var max_ = d["minmax"][1];
+
+                    var diff = max_ - min_;
+                    var domain = d3.range(min_, max_ + diff / 100, diff / (colour_scale.length - 1));
+
+                    if (!(d["domain_manually_set"])) {
+                        d["domain"] = domain
+                    }
+
+                    d["colour_scale"] = d3.scale.linear().domain(d["domain"]).range(colour_scale)
+                }
+            }
+
+
+        })
+
+    }
+
+    this.get_timeseries_data = function(this_code) {
+
+        return  _.filter(this.all_csv_data, function(d) {
+            
+            return d[BMT.data_join_field] == this_code
+        }) 
+
+    }
+
+};

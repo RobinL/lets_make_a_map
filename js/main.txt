@@ -1,0 +1,170 @@
+var p1 = $.ajax(BMT.shapefile_path)
+var p2 = $.ajax(BMT.csv_path)
+
+// To enable this to be shared on the shared drives, comment out the above two lines, and uncomment the following:
+
+// var p3 = jQuery.Deferred();
+// p3.resolve("hurray")
+// $.when(p3).done(function() { topo_data = [topo_data]
+
+$.when(p1,p2).done(function(topo_data, csv_data) {
+
+  //Convert topo_json to geojson
+  var geo_collection = topo_data[0]
+  var geo_collection = topojson.feature(geo_collection, geo_collection.objects.subunits)
+  BMT.geo_collection = geo_collection;
+
+  //Parse the csv data
+  var csv_data = d3.csv.parse(csv_data[0])
+
+  //Add the csv data to the data manager 
+  BMT.dataholder = new DataHolder(csv_data)
+  BMT.dataholder.process_column_descriptions()
+  BMT.dataholder.parse_columns()
+  BMT.dataholder.set_domains()  
+  
+
+  //Draw options
+  var list_of_metrics = getListOfMetrics();
+  var metrics_options_data = metrics_to_options_data(list_of_metrics);
+  draw_options("#shapeColoursVariable",metrics_options_data)
+
+  var colour_options_data = colour_options_to_options_data()
+  draw_options("#colourOptions",colour_options_data)
+
+  $("#shapeColoursVariable, #colourOptions, #filterData").on("change", function(d) {
+    
+    BMT.shapefilemap.redraw()
+  })
+
+   $("#toggle_basemap_button").on("change", function(d) {
+    var ischecked = $('#toggle_basemap_button').is(":checked")
+
+    BMT.map.eachLayer(function(l) {
+    
+    if (ischecked) {l.setOpacity(1)}
+    else {l.setOpacity(0)}  
+    })
+
+    var bgc = $("#background_colour_input").val()
+    $(".leaflet-container").css("background-color",bgc) 
+
+   })
+
+
+   function upload() {
+
+
+
+       
+
+            var data = null;
+            var file = this.files[0];
+            var reader = new FileReader();
+            
+            reader.readAsText(file);
+
+            reader.onload = function(event) {
+            
+            
+                var csvData = event.target.result;
+                csv_data = d3.csv.parse(csvData)
+                debugger;
+                
+                BMT.dataholder = new DataHolder(csv_data)
+                BMT.dataholder.process_column_descriptions()
+                BMT.dataholder.parse_columns()
+                BMT.dataholder.set_domains()  
+                 BMT.shapefilemap.redraw()
+
+                
+
+            };
+            reader.onerror = function() {
+                alert('Unable to read ' + file.fileName);
+            };
+        
+
+    }
+
+
+    d3.select("#fileupload").on("change", upload)
+
+  //Finally draw map
+  BMT.shapefilemap = new ShapefileMap(BMT.geo_collection)
+
+
+});
+
+var getListOfMetrics = function() {
+    
+    var fields = _.filter(BMT.column_descriptions_data, function(d) {
+        return d["manually_included"]
+    })
+
+    var list = _.map(fields, function(d) {
+        return d.key
+    })
+    
+    return list
+}
+
+function metrics_to_options_data(metrics)  {
+  return _.map(metrics, function(d) {
+    return {"value": d, "text": BMT.column_descriptions_data[d].long_name}
+  })
+}
+
+function colour_options_to_options_data() {
+  return _.map(BMT.colour_options, function(k,v) {
+    return {"value":v, "text":v}
+  })
+}
+
+function period_to_options_data() {
+
+  var format = BMT.column_descriptions_data[BMT.filter_field].format
+  var uniques = _.unique(BMT.dataholder.all_csv_data, function(d) {
+    
+    return format(d[BMT.filter_field]);
+  })
+
+  var uniques = _.map(uniques, function(d) {
+    return d[BMT.filter_field];
+  })
+
+  uniques = uniques.sort(function(a,b) { 
+    return a.getTime()-b.getTime()
+  })
+
+  var return_array =  _.map(uniques, function(d) {
+    return {"text": format(d), "value":format(d)}
+  })
+
+  BMT.period_options = _.map(uniques, format);
+
+  return return_array
+
+
+
+
+}
+
+
+function draw_options(selector, data) {
+
+  d3.select(selector).selectAll('option')
+      .data(data)
+      .enter()
+      .append("option")
+      .attr("value", function(d) {
+          return d["value"]
+      })
+      .text(function(d) {
+          return d["text"]
+      })
+
+    // $(selector).val(data[0]["value"]);
+};
+
+      
