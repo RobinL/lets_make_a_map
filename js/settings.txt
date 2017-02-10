@@ -7,10 +7,10 @@ BMT.data_join_field = "code"
 
 BMT.filter_field = "date"
 
-BMT.shapefile_path = "topojson/brexit_countries.json"
+BMT.shapefile_path = "topojson/brexit_countries_ascii.json"
 // BMT.shapefile_path = "topojson/hmcts_regions.json"
 
-BMT.csv_path = "data/world_csv.csv"
+BMT.csv_path = "data/world_ascii.csv"
 // BMT.csv_path = "data/regions_csv.csv"
 
 //Colour options for shading

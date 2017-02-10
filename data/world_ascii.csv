@@ -1,0 +1,259 @@
+sovereignt,name,code,continent,subregion,sum_est_pop,eu_country,border_visible,fill_visible,value
+Austria,Austria,Austria,Europe,Western Europe,8210281.0,True,1.0,1.0,1.998058359273
+Belgium,Belgium,Belgium,Europe,Western Europe,10789548.0,True,1.0,1.0,0.0223874459087
+Bulgaria,Bulgaria,Bulgaria,Europe,Eastern Europe,7204687.0,True,1.0,1.0,0.618170479945
+Croatia,Croatia,Croatia,Europe,Southern Europe,4489409.0,True,1.0,1.0,0.794841897125
+Czech Republic,Czech Republic,Czech Republic,Europe,Eastern Europe,10211904.0,True,1.0,1.0,0.0228833739858
+Denmark,Denmark,Denmark,Europe,Northern Europe,5542664.0,True,1.0,1.0,0.970191010673
+Denmark,Faroe Islands,Faroe Islands,Europe,Northern Europe,48856.0,True,1.0,1.0,0.727615888164
+Estonia,Estonia,Estonia,Europe,Northern Europe,1299371.0,True,1.0,1.0,0.563274026008
+Finland,Aland,Aland,Europe,Northern Europe,27153.0,True,1.0,1.0,0.502697961261
+Finland,Finland,Finland,Europe,Northern Europe,5250275.0,True,1.0,1.0,0.728980209108
+France,France,France,Europe,Western Europe,63439275.0,True,1.0,1.0,0.343848144055
+Germany,Germany,Germany,Europe,Western Europe,82329758.0,True,1.0,1.0,0.111531954747
+Greece,Greece,Greece,Europe,Southern Europe,10737428.0,True,1.0,1.0,0.575748489684
+Hungary,Hungary,Hungary,Europe,Eastern Europe,9905596.0,True,1.0,1.0,0.796514715542
+Ireland,Ireland,Ireland,Europe,Northern Europe,4203200.0,True,1.0,1.0,0.176844165301
+Italy,Italy,Italy,Europe,Southern Europe,58126212.0,True,1.0,1.0,0.958752247377
+Latvia,Latvia,Latvia,Europe,Northern Europe,2231503.0,True,1.0,1.0,0.685746526985
+Lithuania,Lithuania,Lithuania,Europe,Northern Europe,3555179.0,True,1.0,1.0,0.3906375115
+Luxembourg,Luxembourg,Luxembourg,Europe,Western Europe,491775.0,True,1.0,1.0,0.324148622058
+Malta,Malta,Malta,Europe,Southern Europe,405165.0,True,1.0,1.0,0.937459310763
+Netherlands,Netherlands,Netherlands,Europe,Western Europe,16715999.0,True,1.0,1.0,0.384468546397
+Poland,Poland,Poland,Europe,Eastern Europe,38482919.0,True,1.0,1.0,0.889132187572
+Portugal,Portugal,Portugal,Europe,Southern Europe,10707924.0,True,1.0,1.0,0.0818129942256
+Romania,Romania,Romania,Europe,Eastern Europe,22215421.0,True,1.0,1.0,0.568187337338
+Slovakia,Slovakia,Slovakia,Europe,Eastern Europe,5463046.0,True,1.0,1.0,0.379090694217
+Slovenia,Slovenia,Slovenia,Europe,Southern Europe,2005692.0,True,1.0,1.0,0.36995782034
+Spain,Spain,Spain,Europe,Southern Europe,40525002.0,True,1.0,1.0,0.980897343056
+Sweden,Sweden,Sweden,Europe,Northern Europe,9059651.0,True,1.0,1.0,0.165968707964
+United Kingdom,England,England,Europe,Northern Europe,53013000.0,True,1.0,1.0,0.14156963121
+United Kingdom,Jersey,Jersey,Europe,Northern Europe,91626.0,True,1.0,1.0,0.143499905862
+United Kingdom,Northern Ireland,Northern Ireland,Europe,Northern Europe,1810900.0,True,1.0,1.0,0.621736572406
+United Kingdom,Scotland,Scotland,Europe,Northern Europe,5254800.0,True,1.0,1.0,0.898671182649
+United Kingdom,Wales,Wales,Europe,Northern Europe,0.0,True,1.0,1.0,0.868325667369
+United Kingdom,Guernsey,Guernsey,Europe,Western Europe,68633.0,True,1.0,1.0,0.364540624456
+United Kingdom,Isle of Man,Isle of Man,Europe,Northern Europe,76512.0,True,1.0,1.0,0.807143041711
+United Kingdom,Gibraltar,Gibraltar,Europe,Southern Europe,28034.0,True,1.0,1.0,0.538624200838
+Albania,Albania,Albania,Europe,Southern Europe,3639453.0,False,1.0,0.0,0.194202110414
+Andorra,Andorra,Andorra,Europe,Southern Europe,83888.0,False,1.0,0.0,0.138357267337
+Belarus,Belarus,Belarus,Europe,Eastern Europe,9648533.0,False,1.0,0.0,0.829530627661
+Bosnia and Herzegovina,Bosnia and Herzegovina,Bosnia and Herzegovina,Europe,Southern Europe,3766892.0,False,1.0,0.0,0.923890422921
+Iceland,Iceland,Iceland,Europe,Northern Europe,306694.0,False,1.0,0.0,0.498450396184
+Kosovo,Kosovo,Kosovo,Europe,Southern Europe,1804838.0,False,1.0,0.0,0.899470764056
+Liechtenstein,Liechtenstein,Liechtenstein,Europe,Western Europe,34761.0,False,1.0,0.0,0.752353629129
+Macedonia,Macedonia,Macedonia,Europe,Southern Europe,2066718.0,False,1.0,0.0,0.154380356844
+Moldova,Moldova,Moldova,Europe,Eastern Europe,4320748.0,False,1.0,0.0,0.438088955427
+Monaco,Monaco,Monaco,Europe,Western Europe,32965.0,False,1.0,0.0,0.535475499457
+Montenegro,Montenegro,Montenegro,Europe,Southern Europe,672180.0,False,1.0,0.0,0.934322173368
+Norway,Norway,Norway,Europe,Northern Europe,4678391.0,False,1.0,0.0,0.0981442878778
+Republic of Serbia,Republic of Serbia,Republic of Serbia,Europe,Southern Europe,7364936.0,False,1.0,0.0,0.640055503277
+Russia,Russia,Russia,Europe,Eastern Europe,140041247.0,False,0.0,0.0,0.940918914872
+San Marino,San Marino,San Marino,Europe,Southern Europe,30324.0,False,1.0,0.0,0.566838047997
+Switzerland,Switzerland,Switzerland,Europe,Western Europe,7604467.0,False,1.0,0.0,0.38896979264
+Ukraine,Ukraine,Ukraine,Europe,Eastern Europe,45700395.0,False,1.0,0.0,0.938083134357
+Vatican,Vatican,Vatican,Europe,Southern Europe,832.0,False,1.0,0.0,0.853973337388
+Afghanistan,Afghanistan,Afghanistan,Asia,Southern Asia,28400000.0,False,0.0,0.0,0.590047485217
+Algeria,Algeria,Algeria,Africa,Northern Africa,34178188.0,False,0.0,0.0,0.459370486337
+Angola,Angola,Angola,Africa,Middle Africa,12799293.0,False,0.0,0.0,0.480816126219
+Antarctica,Antarctica,Antarctica,Antarctica,Antarctica,3802.0,False,0.0,0.0,0.11445773407
+Antigua and Barbuda,Antigua and Barbuda,Antigua and Barbuda,North America,Caribbean,85632.0,False,0.0,0.0,0.806312166018
+Argentina,Argentina,Argentina,South America,South America,40913584.0,False,0.0,0.0,0.328965066551
+Armenia,Armenia,Armenia,Asia,Western Asia,2967004.0,False,0.0,0.0,0.616665751688
+Australia,Heard Island and McDonald Islands,Heard Island and McDonald Islands,Seven seas (open ocean),Seven seas (open ocean),-99.0,False,0.0,0.0,0.317890747638
+Australia,Coral Sea Islands,Coral Sea Islands,Oceania,Australia and New Zealand,4.0,False,0.0,0.0,0.638573744009
+Australia,Australia,Australia,Oceania,Australia and New Zealand,21262641.0,False,0.0,0.0,0.392995484749
+Australia,Ashmore and Cartier Islands,Ashmore and Cartier Islands,Oceania,Australia and New Zealand,-99.0,False,0.0,0.0,0.148298234153
+Australia,Norfolk Island,Norfolk Island,Oceania,Australia and New Zealand,2141.0,False,0.0,0.0,0.470896748725
+Australia,Indian Ocean Territories,Indian Ocean Territories,Asia,South-Eastern Asia,2069.0,False,0.0,0.0,0.603384584116
+Azerbaijan,Azerbaijan,Azerbaijan,Asia,Western Asia,8238672.0,False,0.0,0.0,0.881786032549
+Bahrain,Bahrain,Bahrain,Asia,Western Asia,727785.0,False,0.0,0.0,0.551163544186
+Bajo Nuevo Bank (Petrel Is.),Bajo Nuevo Bank (Petrel Is.),Bajo Nuevo Bank (Petrel Is.),North America,Caribbean,-99.0,False,0.0,0.0,0.298673878402
+Bangladesh,Bangladesh,Bangladesh,Asia,Southern Asia,156050883.0,False,0.0,0.0,0.296329957864
+Barbados,Barbados,Barbados,North America,Caribbean,284589.0,False,0.0,0.0,0.23378272698
+Belize,Belize,Belize,North America,Central America,307899.0,False,0.0,0.0,0.0306145548528
+Benin,Benin,Benin,Africa,Western Africa,8791832.0,False,0.0,0.0,0.93705548865
+Bhutan,Bhutan,Bhutan,Asia,Southern Asia,691141.0,False,0.0,0.0,0.294521033446
+Bolivia,Bolivia,Bolivia,South America,South America,9775246.0,False,0.0,0.0,0.753819106511
+Botswana,Botswana,Botswana,Africa,Southern Africa,1990876.0,False,0.0,0.0,0.749325292418
+Brazil,Brazil,Brazil,South America,South America,198739269.0,False,0.0,0.0,0.358652881693
+Brunei,Brunei,Brunei,Asia,South-Eastern Asia,388190.0,False,0.0,0.0,0.154075894867
+Burkina Faso,Burkina Faso,Burkina Faso,Africa,Western Africa,15746232.0,False,0.0,0.0,0.452428840626
+Burundi,Burundi,Burundi,Africa,Eastern Africa,8988091.0,False,0.0,0.0,0.940455447009
+Cambodia,Cambodia,Cambodia,Asia,South-Eastern Asia,14494293.0,False,0.0,0.0,0.462884000372
+Cameroon,Cameroon,Cameroon,Africa,Middle Africa,18879301.0,False,0.0,0.0,0.025545369931
+Canada,Canada,Canada,North America,Northern America,33487208.0,False,0.0,0.0,0.852653692573
+Cape Verde,Cape Verde,Cape Verde,Africa,Western Africa,429474.0,False,0.0,0.0,0.0525352974018
+Central African Republic,Central African Republic,Central African Republic,Africa,Middle Africa,4511488.0,False,0.0,0.0,0.298869024765
+Chad,Chad,Chad,Africa,Middle Africa,10329208.0,False,0.0,0.0,0.399208604814
+Chile,Chile,Chile,South America,South America,16601707.0,False,0.0,0.0,0.0494325465272
+China,China,China,Asia,Eastern Asia,1338613068.0,False,0.0,0.0,0.451774800008
+China,Hong Kong S.A.R.,Hong Kong S.A.R.,Asia,Eastern Asia,7061200.0,False,0.0,0.0,0.174469564704
+China,Macao S.A.R,Macao S.A.R,Asia,Eastern Asia,559846.0,False,0.0,0.0,0.685366991123
+Colombia,Colombia,Colombia,South America,South America,45644023.0,False,0.0,0.0,0.292589511414
+Comoros,Comoros,Comoros,Africa,Eastern Africa,752438.0,False,0.0,0.0,0.688635859923
+Costa Rica,Costa Rica,Costa Rica,North America,Central America,4253877.0,False,0.0,0.0,0.454086924821
+Cuba,Cuba,Cuba,North America,Caribbean,11451652.0,False,0.0,0.0,0.527543873563
+Cuba,US Naval Base Guantanamo Bay,US Naval Base Guantanamo Bay,North America,Caribbean,7000.0,False,0.0,0.0,0.861658446823
+Cyprus,Cyprus,Cyprus,Asia,Western Asia,531640.0,False,0.0,0.0,0.163638536474
+Cyprus No Mans Area,Cyprus No Mans Area,Cyprus No Mans Area,Asia,Western Asia,10000.0,False,0.0,0.0,0.953474190784
+Democratic Republic of the Congo,Democratic Republic of the Congo,Democratic Republic of the Congo,Africa,Middle Africa,68692542.0,False,0.0,0.0,0.591899394656
+Denmark,Greenland,Greenland,North America,Northern America,57600.0,False,0.0,0.0,0.0762436620904
+Djibouti,Djibouti,Djibouti,Africa,Eastern Africa,516055.0,False,0.0,0.0,0.599053777541
+Dominica,Dominica,Dominica,North America,Caribbean,72660.0,False,0.0,0.0,0.0460848257996
+Dominican Republic,Dominican Republic,Dominican Republic,North America,Caribbean,9650054.0,False,0.0,0.0,0.930502361215
+East Timor,East Timor,East Timor,Asia,South-Eastern Asia,1066582.0,False,0.0,0.0,0.886734373755
+Ecuador,Ecuador,Ecuador,South America,South America,14573101.0,False,0.0,0.0,0.472035783616
+Egypt,Egypt,Egypt,Africa,Northern Africa,83082869.0,False,0.0,0.0,0.486006107285
+El Salvador,El Salvador,El Salvador,North America,Central America,7185218.0,False,0.0,0.0,0.542934699572
+Equatorial Guinea,Equatorial Guinea,Equatorial Guinea,Africa,Middle Africa,429000.0,False,0.0,0.0,0.89649079508
+Eritrea,Eritrea,Eritrea,Africa,Eastern Africa,5647168.0,False,0.0,0.0,0.931109243577
+Ethiopia,Ethiopia,Ethiopia,Africa,Eastern Africa,85237338.0,False,0.0,0.0,0.43199328525
+Federated States of Micronesia,Federated States of Micronesia,Federated States of Micronesia,Oceania,Micronesia,107434.0,False,0.0,0.0,0.613573990633
+Fiji,Fiji,Fiji,Oceania,Melanesia,944720.0,False,0.0,0.0,0.509647595569
+France,Clipperton Island,Clipperton Island,Seven seas (open ocean),Central America,-99.0,False,0.0,0.0,0.488539257534
+France,Wallis and Futuna,Wallis and Futuna,Oceania,Polynesia,15289.0,False,0.0,0.0,0.915271365418
+France,New Caledonia,New Caledonia,Oceania,Melanesia,227436.0,False,0.0,0.0,0.820051203734
+France,French Polynesia,French Polynesia,Oceania,Polynesia,287032.0,False,0.0,0.0,0.957912311801
+France,Saint Pierre and Miquelon,Saint Pierre and Miquelon,North America,Northern America,7051.0,False,0.0,0.0,0.259538148157
+France,Saint Barthelemy,Saint Barthelemy,North America,Caribbean,7448.0,False,0.0,0.0,0.0700258276585
+France,Saint Martin,Saint Martin,North America,Caribbean,36661.0,False,0.0,0.0,0.16283214598
+France,French Southern and Antarctic Lands,French Southern and Antarctic Lands,Africa,Eastern Africa,41.0,False,0.0,0.0,0.535723774883
+Gabon,Gabon,Gabon,Africa,Middle Africa,1514993.0,False,0.0,0.0,0.224822458202
+Gambia,Gambia,Gambia,Africa,Western Africa,1782893.0,False,0.0,0.0,0.837768820398
+Georgia,Georgia,Georgia,Asia,Western Asia,4615807.0,False,0.0,0.0,0.631386707451
+Ghana,Ghana,Ghana,Africa,Western Africa,23832495.0,False,0.0,0.0,0.579222617312
+Grenada,Grenada,Grenada,North America,Caribbean,90739.0,False,0.0,0.0,0.843433567655
+Guatemala,Guatemala,Guatemala,North America,Central America,13276517.0,False,0.0,0.0,0.513898037564
+Guinea,Guinea,Guinea,Africa,Western Africa,10057975.0,False,0.0,0.0,0.237995037513
+Guinea Bissau,Guinea Bissau,Guinea Bissau,Africa,Western Africa,1533964.0,False,0.0,0.0,0.591685746422
+Guyana,Guyana,Guyana,South America,South America,772298.0,False,0.0,0.0,0.485373304977
+Haiti,Haiti,Haiti,North America,Caribbean,9035536.0,False,0.0,0.0,0.105991392101
+Honduras,Honduras,Honduras,North America,Central America,7792854.0,False,0.0,0.0,0.276048735705
+India,India,India,Asia,Southern Asia,1165898978.0,False,0.0,0.0,0.384867754279
+Indonesia,Indonesia,Indonesia,Asia,South-Eastern Asia,240271522.0,False,0.0,0.0,0.323326683404
+Iran,Iran,Iran,Asia,Southern Asia,66429284.0,False,0.0,0.0,0.828259684147
+Iraq,Iraq,Iraq,Asia,Western Asia,31129225.0,False,0.0,0.0,0.403785061292
+Israel,Israel,Israel,Asia,Western Asia,7233701.0,False,0.0,0.0,0.120500840701
+Israel,Palestine,Palestine,Asia,Western Asia,4119083.0,False,0.0,0.0,0.537668441951
+Ivory Coast,Ivory Coast,Ivory Coast,Africa,Western Africa,20617068.0,False,0.0,0.0,0.851366966461
+Jamaica,Jamaica,Jamaica,North America,Caribbean,2825928.0,False,0.0,0.0,0.37214209773
+Japan,Japan,Japan,Asia,Eastern Asia,128764295.79,False,0.0,0.0,0.196878422626
+Jordan,Jordan,Jordan,Asia,Western Asia,6342948.0,False,0.0,0.0,0.401669489699
+Kashmir,Siachen Glacier,Siachen Glacier,Asia,Southern Asia,6000.0,False,0.0,0.0,0.135417640184
+Kazakhstan,Baykonur Cosmodrome,Baykonur Cosmodrome,Asia,Central Asia,70000.0,False,0.0,0.0,0.921216934116
+Kazakhstan,Kazakhstan,Kazakhstan,Asia,Central Asia,15399437.0,False,0.0,0.0,0.647623535391
+Kenya,Kenya,Kenya,Africa,Eastern Africa,39002772.0,False,0.0,0.0,0.0425995263554
+Kiribati,Kiribati,Kiribati,Oceania,Micronesia,112850.0,False,0.0,0.0,0.466847368516
+Kuwait,Kuwait,Kuwait,Asia,Western Asia,2691158.0,False,0.0,0.0,0.295361994689
+Kyrgyzstan,Kyrgyzstan,Kyrgyzstan,Asia,Central Asia,5431747.0,False,0.0,0.0,0.702628814052
+Laos,Laos,Laos,Asia,South-Eastern Asia,6834942.0,False,0.0,0.0,0.581251472904
+Lebanon,Lebanon,Lebanon,Asia,Western Asia,4017095.0,False,0.0,0.0,0.301886332659
+Lesotho,Lesotho,Lesotho,Africa,Southern Africa,2130819.0,False,0.0,0.0,0.698265473852
+Liberia,Liberia,Liberia,Africa,Western Africa,3441790.0,False,0.0,0.0,0.14156315981
+Libya,Libya,Libya,Africa,Northern Africa,6310434.0,False,0.0,0.0,0.933977543151
+Madagascar,Madagascar,Madagascar,Africa,Eastern Africa,20653556.0,False,0.0,0.0,0.584474235183
+Malawi,Malawi,Malawi,Africa,Eastern Africa,14268711.0,False,0.0,0.0,0.227364507914
+Malaysia,Malaysia,Malaysia,Asia,South-Eastern Asia,25715819.0,False,0.0,0.0,0.845313744306
+Maldives,Maldives,Maldives,Seven seas (open ocean),Southern Asia,396334.0,False,0.0,0.0,0.139034880403
+Mali,Mali,Mali,Africa,Western Africa,12666987.0,False,0.0,0.0,0.140958402399
+Marshall Islands,Marshall Islands,Marshall Islands,Oceania,Micronesia,64522.0,False,0.0,0.0,0.63307798086
+Mauritania,Mauritania,Mauritania,Africa,Western Africa,3129486.0,False,0.0,0.0,0.754970949249
+Mauritius,Mauritius,Mauritius,Seven seas (open ocean),Eastern Africa,1284264.0,False,0.0,0.0,0.58223281832
+Mexico,Mexico,Mexico,North America,Central America,111211789.0,False,0.0,0.0,0.62383166072
+Mongolia,Mongolia,Mongolia,Asia,Eastern Asia,3041142.0,False,0.0,0.0,0.296076197516
+Morocco,Morocco,Morocco,Africa,Northern Africa,34859364.0,False,0.0,0.0,0.43357628826
+Mozambique,Mozambique,Mozambique,Africa,Eastern Africa,21669278.0,False,0.0,0.0,0.854885999574
+Myanmar,Myanmar,Myanmar,Asia,South-Eastern Asia,48137741.0,False,0.0,0.0,0.778182852935
+Namibia,Namibia,Namibia,Africa,Southern Africa,2108665.0,False,0.0,0.0,0.245948008553
+Nauru,Nauru,Nauru,Oceania,Micronesia,14019.0,False,0.0,0.0,0.75264881705
+Nepal,Nepal,Nepal,Asia,Southern Asia,28563377.0,False,0.0,0.0,0.0566708180397
+Netherlands,Curacao,Curacao,North America,Caribbean,141766.0,False,0.0,0.0,0.279018865091
+Netherlands,Sint Maarten,Sint Maarten,North America,Caribbean,37429.0,False,0.0,0.0,0.0820290769291
+Netherlands,Aruba,Aruba,North America,Caribbean,103065.0,False,0.0,0.0,0.903222016096
+New Zealand,Niue,Niue,Oceania,Polynesia,1398.0,False,0.0,0.0,0.737067313528
+New Zealand,New Zealand,New Zealand,Oceania,Australia and New Zealand,4406387.0,False,0.0,0.0,0.600702393274
+New Zealand,Cook Islands,Cook Islands,Oceania,Polynesia,11870.0,False,0.0,0.0,0.358726742572
+Nicaragua,Nicaragua,Nicaragua,North America,Central America,5891199.0,False,0.0,0.0,0.124078259716
+Niger,Niger,Niger,Africa,Western Africa,15306252.0,False,0.0,0.0,0.330920879326
+Nigeria,Nigeria,Nigeria,Africa,Western Africa,149229090.0,False,0.0,0.0,0.407108959702
+North Korea,North Korea,North Korea,Asia,Eastern Asia,22665246.0,False,0.0,0.0,0.024960007322
+Northern Cyprus,Northern Cyprus,Northern Cyprus,Asia,Western Asia,265100.0,False,0.0,0.0,0.902773597942
+Oman,Oman,Oman,Asia,Western Asia,3418085.0,False,0.0,0.0,0.781774412336
+Pakistan,Pakistan,Pakistan,Asia,Southern Asia,176242949.0,False,0.0,0.0,0.450826140744
+Palau,Palau,Palau,Oceania,Micronesia,20796.0,False,0.0,0.0,0.720641619503
+Panama,Panama,Panama,North America,Central America,3360474.0,False,0.0,0.0,0.54893703595
+Papua New Guinea,Papua New Guinea,Papua New Guinea,Oceania,Melanesia,6057263.0,False,0.0,0.0,0.632973008988
+Paraguay,Paraguay,Paraguay,South America,South America,6995655.0,False,0.0,0.0,0.235811756358
+Peru,Peru,Peru,South America,South America,29546963.0,False,0.0,0.0,0.712445937134
+Philippines,Philippines,Philippines,Asia,South-Eastern Asia,97976603.0,False,0.0,0.0,0.015984214729
+Qatar,Qatar,Qatar,Asia,Western Asia,833285.0,False,0.0,0.0,0.699014544951
+Republic of Congo,Republic of Congo,Republic of Congo,Africa,Middle Africa,4012809.0,False,0.0,0.0,0.327334688384
+Rwanda,Rwanda,Rwanda,Africa,Eastern Africa,10473282.0,False,0.0,0.0,0.568655034683
+Saint Kitts and Nevis,Saint Kitts and Nevis,Saint Kitts and Nevis,North America,Caribbean,40131.0,False,0.0,0.0,0.821694871853
+Saint Lucia,Saint Lucia,Saint Lucia,North America,Caribbean,160267.0,False,0.0,0.0,0.385513555781
+Saint Vincent and the Grenadines,Saint Vincent and the Grenadines,Saint Vincent and the Grenadines,North America,Caribbean,104574.0,False,0.0,0.0,0.903797663302
+Samoa,Samoa,Samoa,Oceania,Polynesia,219998.0,False,0.0,0.0,0.88126305832
+Sao Tome and Principe,Sao Tome and Principe,Sao Tome and Principe,Africa,Middle Africa,162000.0,False,0.0,0.0,0.69649309278
+Saudi Arabia,Saudi Arabia,Saudi Arabia,Asia,Western Asia,28686633.0,False,0.0,0.0,0.759575445667
+Scarborough Reef,Scarborough Reef,Scarborough Reef,Asia,South-Eastern Asia,-99.0,False,0.0,0.0,0.578641485381
+Senegal,Senegal,Senegal,Africa,Western Africa,13711597.0,False,0.0,0.0,0.704777459631
+Serranilla Bank,Serranilla Bank,Serranilla Bank,North America,Caribbean,-99.0,False,0.0,0.0,0.142127857204
+Seychelles,Seychelles,Seychelles,Seven seas (open ocean),Eastern Africa,87476.0,False,0.0,0.0,0.275242364317
+Sierra Leone,Sierra Leone,Sierra Leone,Africa,Western Africa,6440053.0,False,0.0,0.0,0.986116058668
+Singapore,Singapore,Singapore,Asia,South-Eastern Asia,4657542.0,False,0.0,0.0,0.55859298214
+Solomon Islands,Solomon Islands,Solomon Islands,Oceania,Melanesia,595613.0,False,0.0,0.0,0.350142897368
+Somalia,Somalia,Somalia,Africa,Eastern Africa,9832017.0,False,0.0,0.0,0.759818411125
+Somaliland,Somaliland,Somaliland,Africa,Eastern Africa,3500000.0,False,0.0,0.0,0.333531723505
+South Africa,South Africa,South Africa,Africa,Southern Africa,49052390.0,False,0.0,0.0,0.327433105735
+South Korea,South Korea,South Korea,Asia,Eastern Asia,49088564.0,False,0.0,0.0,0.477666657865
+South Sudan,South Sudan,South Sudan,Africa,Eastern Africa,10625176.0,False,0.0,0.0,0.430142149381
+Spratly Islands,Spratly Islands,Spratly Islands,Asia,South-Eastern Asia,100.0,False,0.0,0.0,0.91156121646
+Sri Lanka,Sri Lanka,Sri Lanka,Asia,Southern Asia,21324791.0,False,0.0,0.0,0.813716662965
+Sudan,Sudan,Sudan,Africa,Northern Africa,25946220.0,False,0.0,0.0,0.893333203556
+Suriname,Suriname,Suriname,South America,South America,481267.0,False,0.0,0.0,0.946438141825
+Swaziland,Swaziland,Swaziland,Africa,Southern Africa,1123913.0,False,0.0,0.0,0.734066825276
+Syria,Syria,Syria,Asia,Western Asia,20178485.0,False,0.0,0.0,0.600049157248
+Taiwan,Taiwan,Taiwan,Asia,Eastern Asia,22974347.0,False,0.0,0.0,0.886905144943
+Tajikistan,Tajikistan,Tajikistan,Asia,Central Asia,7349145.0,False,0.0,0.0,0.339926893591
+Thailand,Thailand,Thailand,Asia,South-Eastern Asia,65905410.0,False,0.0,0.0,0.279042521612
+The Bahamas,The Bahamas,The Bahamas,North America,Caribbean,309156.0,False,0.0,0.0,0.213147829365
+Togo,Togo,Togo,Africa,Western Africa,6019877.0,False,0.0,0.0,0.878022579065
+Tonga,Tonga,Tonga,Oceania,Polynesia,120898.0,False,0.0,0.0,0.158762504336
+Trinidad and Tobago,Trinidad and Tobago,Trinidad and Tobago,North America,Caribbean,1306800.0,False,0.0,0.0,0.723859296976
+Tunisia,Tunisia,Tunisia,Africa,Northern Africa,10486339.0,False,0.0,0.0,0.00827284285306
+Turkey,Turkey,Turkey,Asia,Western Asia,76805524.0,False,0.0,0.0,0.926663540276
+Turkmenistan,Turkmenistan,Turkmenistan,Asia,Central Asia,4884887.0,False,0.0,0.0,0.787496831481
+Tuvalu,Tuvalu,Tuvalu,Oceania,Polynesia,12373.0,False,0.0,0.0,0.921498484765
+Uganda,Uganda,Uganda,Africa,Eastern Africa,32369558.0,False,0.0,0.0,0.928418689318
+United Arab Emirates,United Arab Emirates,United Arab Emirates,Asia,Western Asia,4798491.0,False,0.0,0.0,0.0632894611363
+United Kingdom,Falkland Islands,Falkland Islands,South America,South America,3140.0,False,0.0,0.0,0.716684740574
+United Kingdom,British Indian Ocean Territory,British Indian Ocean Territory,Seven seas (open ocean),Seven seas (open ocean),8000.0,False,0.0,0.0,0.276673869009
+United Kingdom,Saint Helena,Saint Helena,Seven seas (open ocean),Seven seas (open ocean),5459.0,False,0.0,0.0,0.820468233993
+United Kingdom,South Georgia and the Islands,South Georgia and the Islands,Seven seas (open ocean),Seven seas (open ocean),-69.0,False,0.0,0.0,0.66611081853
+United Kingdom,Pitcairn Islands,Pitcairn Islands,Oceania,Polynesia,48.0,False,0.0,0.0,0.0607620632432
+United Kingdom,Montserrat,Montserrat,North America,Caribbean,5097.0,False,0.0,0.0,0.801777934506
+United Kingdom,British Virgin Islands,British Virgin Islands,North America,Caribbean,24491.0,False,0.0,0.0,0.774634270818
+United Kingdom,Anguilla,Anguilla,North America,Caribbean,14436.0,False,0.0,0.0,0.632482534396
+United Kingdom,Bermuda,Bermuda,North America,Northern America,67837.0,False,0.0,0.0,0.2284045743
+United Kingdom,Cayman Islands,Cayman Islands,North America,Caribbean,49035.0,False,0.0,0.0,0.659822670594
+United Kingdom,Turks and Caicos Islands,Turks and Caicos Islands,North America,Caribbean,22942.0,False,0.0,0.0,0.185270262371
+United Kingdom,Dhekelia Sovereign Base Area,Dhekelia Sovereign Base Area,Asia,Western Asia,7850.0,False,0.0,0.0,0.159504510474
+United Kingdom,Akrotiri Sovereign Base Area,Akrotiri Sovereign Base Area,Asia,Western Asia,7850.0,False,0.0,0.0,0.561793917964
+United Republic of Tanzania,United Republic of Tanzania,United Republic of Tanzania,Africa,Eastern Africa,42118532.0,False,0.0,0.0,0.368314447139
+United States of America,American Samoa,American Samoa,Oceania,Polynesia,65628.0,False,0.0,0.0,0.404252752684
+United States of America,United States Minor Outlying Islands,United States Minor Outlying Islands,Oceania,Micronesia,-891.0,False,0.0,0.0,0.414300616901
+United States of America,Guam,Guam,Oceania,Micronesia,178430.0,False,0.0,0.0,0.965895359855
+United States of America,Northern Mariana Islands,Northern Mariana Islands,Oceania,Micronesia,88662.0,False,0.0,0.0,0.220538184282
+United States of America,Puerto Rico,Puerto Rico,North America,Caribbean,3971020.0,False,0.0,0.0,0.193433567514
+United States of America,United States,United States,North America,Northern America,313973000.0,False,0.0,0.0,0.985382830995
+United States of America,United States Virgin Islands,United States Virgin Islands,North America,Caribbean,109825.0,False,0.0,0.0,0.760957277471
+Uruguay,Uruguay,Uruguay,South America,South America,3494382.0,False,0.0,0.0,0.0602369791534
+Uzbekistan,Uzbekistan,Uzbekistan,Asia,Central Asia,27606007.0,False,0.0,0.0,0.138747890767
+Vanuatu,Vanuatu,Vanuatu,Oceania,Melanesia,218519.0,False,0.0,0.0,0.931119209853
+Venezuela,Venezuela,Venezuela,South America,South America,26814843.0,False,0.0,0.0,0.0840319493107
+Vietnam,Vietnam,Vietnam,Asia,South-Eastern Asia,86967524.0,False,0.0,0.0,0.431593214854
+Western Sahara,Western Sahara,Western Sahara,Africa,Northern Africa,-99.0,False,0.0,0.0,0.644873040437
+Yemen,Yemen,Yemen,Asia,Western Asia,23865625.0,False,0.0,0.0,0.498849444563
+Zambia,Zambia,Zambia,Africa,Eastern Africa,11862740.0,False,0.0,0.0,0.907414213104
+Zimbabwe,Zimbabwe,Zimbabwe,Africa,Eastern Africa,12619600.0,False,0.0,0.0,0.181868561056
