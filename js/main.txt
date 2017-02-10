@@ -55,9 +55,6 @@ $.when(p1,p2).done(function(topo_data, csv_data) {
    function upload() {
 
 
-
-       
-
             var data = null;
             var file = this.files[0];
             var reader = new FileReader();
